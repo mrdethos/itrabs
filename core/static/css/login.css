@@ -1,0 +1,105 @@
+/*------------------- GERAL ----------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --medium-500: 500;
+  --semibold-600: 600;
+  --bold-700: 700;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #6e0085;
+}
+
+/*-------------- LOGIN ---------------*/
+
+#container {
+  position: absolute;
+  background-color: #6e0085;
+  width: 100%;
+  height: 100%;
+}
+
+#container .login,
+#container .singup {
+  position: absolute;
+  top: 12%;
+  left: 25%;
+  width: 50%;
+  text-align: center;
+}
+
+.login img,
+.singup img {
+  width: 30rem;
+}
+
+.login h2,
+.singup h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+
+  font-size: 2.4rem;
+  font-weight: var(--semibold-600);
+}
+
+.login #form label,
+.singup #form label {
+  display: block;
+  color: #ffffff;
+  text-align: left;
+  margin-top: 2.5rem;
+
+  font-size: 1.4rem;
+}
+
+.login #form input,
+.singup #form input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 0.1rem solid #999;
+  outline: 0;
+}
+
+.login #form #button,
+.singup #form #button {
+  margin-top: 2.5rem;
+
+  border-radius: 1.5rem;
+
+  cursor: pointer;
+
+  color: #6e0085;
+  font-weight: var(--medium-500);
+  font-size: 1.6rem;
+}
+
+.login #form #button:hover,
+.singup #form #button:hover {
+  box-shadow: 0.1rem 0.5rem #000000;
+  transform: translateY(-0.25em);
+}
+
+.login hr {
+  margin-top: 2rem;
+}
+
+.login a,
+.singup a {
+  text-decoration: underline;
+  color: #ffffff;
+
+  font-size: 1.6rem;
+  font-weight: var(--medium-500);
+}

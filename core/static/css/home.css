@@ -1,0 +1,325 @@
+/*------------------- GERAL ----------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --blue-color: #6e0085;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #00856f;
+
+  --button-shadow: #000000;
+
+  --light-300: 300;
+  --regular-400: 400;
+  --medium-500: 500;
+  --semibold-600: 600;
+  --bold-700: 700;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #dce9e2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 110rem;
+  /*background-color: #00856f;*/
+}
+
+#header,
+#hero,
+#etapas,
+#categorias,
+#sobre,
+#footer {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ------------ HEADER --------------------*/
+
+#header {
+  padding-bottom: 6.7rem;
+
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+#header .container {
+  position: fixed;
+}
+
+#header .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+
+  padding-bottom: 1rem;
+}
+
+#header .navigation li {
+  padding: 0rem 1.6rem;
+  display: inline-block;
+}
+
+#header .navigation ul a {
+  text-decoration: none;
+  color: var(--blue-color);
+  font-size: 2rem;
+  font-weight: var(--semibold-600);
+  padding-bottom: 1rem;
+}
+
+#header .navigation ul a:hover {
+  border-bottom: 5px solid #6e0085;
+}
+
+#header .navigation .button,
+#hero .hero-content .button {
+  background: var(--blue-color);
+  color: var(--white-color);
+  padding: 1.1rem 1.1rem;
+  width: 24rem;
+  font-size: 1.2rem;
+  font-weight: var(--semibold-600);
+  border-radius: 1.5rem;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+}
+
+#header .navigation .button:hover,
+#hero .hero-content .button:hover {
+  box-shadow: 0.1rem 0.5rem var(--button-shadow);
+  transform: translateY(-0.25em);
+}
+
+/*----HEADER-ONSCROLL-----*/
+
+#header.scroll {
+  background-color: var(--blue-color);
+}
+
+#header.scroll .logo path {
+  fill: var(--white-color);
+}
+
+#header.scroll .navigation ul a {
+  color: var(--white-color);
+}
+
+#header.scroll .navigation ul a:hover {
+  border-bottom: 5px solid #ffffff;
+}
+
+#header.scroll .navigation .button {
+  background-color: var(--white-color);
+  color: var(--blue-color);
+}
+
+
+/*---------------- HERO --------------*/
+
+#hero {
+  height: 45rem;
+  background-image: url('../../images/Hero-Background.png');
+}
+
+#hero .hero-content {
+  width: 60rem;
+}
+
+#hero p:nth-child(1) {
+  color: var(--blue-color);
+  font-size: 1.4rem;
+  font-weight: var(--semibold-600);
+  padding-top: 8rem;
+}
+
+#hero h1 {
+  font-size: 4rem;
+  font-weight: var(--bold-700);
+  color: var(--black-color);
+  padding-top: 6.2rem;
+  padding-bottom: 3.5rem;
+}
+
+#hero .description {
+  font-size: 1.8rem;
+  font-weight: var(--medium-500);
+  padding-bottom: 5rem;
+}
+
+/*--------------- COMO-FUNCIONA SECTION -----------*/
+#etapas {
+  background-color: var(--gray-color);
+  padding-top: 2rem;
+}
+
+#etapas .section-title {
+  color: var(--white-color);
+  padding-top: 5rem;
+  font-size: 2.6rem;
+  font-weight: var(--bold-700);
+  display: flex;
+  justify-content: center;
+}
+
+#etapas .cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 6rem 9rem;
+}
+
+#etapas .card1,
+#etapas .card2,
+#etapas .card3 {
+  width: 16.1rem;
+  height: 30.8rem;
+}
+
+#etapas .cards .card-title {
+  color: var(--white-color);
+  font-size: 2.4rem;
+  font-weight: var(--semibold-600);
+  padding: auto;
+  text-align: center;
+}
+
+#etapas .cards .card-desc {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: var(--regular-400);
+  text-align: center;
+  padding-top: 1.3rem;
+}
+
+/*--------------------- cetegorias section ---------------------*/
+
+#categorias .section-title {
+  color: var(--black-color);
+  padding-top: 7rem;
+  font-size: 2.6rem;
+  font-weight: var(--bold-700);
+  display: flex;
+  justify-content: center;
+}
+
+#categorias .cards-categorias .cards1,
+#categorias .cards-categorias .cards2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#categorias .cards-categorias .cards1 {
+  padding-top: 5.4rem;
+  padding-bottom: 8.9rem;
+}
+
+#categorias .cards-categorias .cards2 {
+  padding-bottom: 10rem;
+}
+
+/*----------------SOBRE----------------*/
+#sobre {
+  background-color: var(--gray-color);
+}
+
+#sobre .sobre-info {
+  display: flex;
+  padding-top: 8.6rem;
+  padding-bottom: 6.4rem;
+}
+
+#sobre .sobre-info .sobre-disc {
+  padding-left: 6.6rem;
+}
+
+#sobre .sobre-info .sobre-disc h2 {
+  font-size: 2.6rem;
+  color: var(--white-color);
+}
+
+#sobre .sobre-info .sobre-disc p {
+  font-size: 2.2rem;
+  font-weight: var(--medium-500);
+  color: var(--white-color);
+
+  padding-top: 5rem;
+}
+
+#sobre .sobre-info .sobre-disc .btn {
+  padding-top: 7.4rem;
+}
+
+#sobre .sobre-info .sobre-disc .button {
+  background: var(--blue-color);
+  color: var(--white-color);
+  padding: 1.1rem 1.1rem;
+  width: 24rem;
+  font-size: 1.2rem;
+  font-weight: var(--semibold-600);
+  border-radius: 1.5rem;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+}
+
+#sobre .sobre-info .sobre-disc .button:hover {
+  box-shadow: 0.1rem 0.5rem var(--button-shadow);
+  transform: translateY(-0.25em);
+}
+
+/*-------------FOOTER--------------*/
+
+#footer {
+  background-color: var(--blue-color);
+}
+
+#footer .footer-info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5.2rem;
+  padding-bottom: 5.6rem;
+}
+
+#footer .footer-info .info p {
+  padding-top: 1.8rem;
+  color: var(--white-color);
+  font-size: 1.4rem;
+  font-weight: var(--regular-400);
+}
+
+#footer .footer-info .social-link {
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-info .social-link ul {
+  display: flex;
+}
+
+#footer .footer-info .social-link ul li {
+  padding-left: 4rem;
+}
