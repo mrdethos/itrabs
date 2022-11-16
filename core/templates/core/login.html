@@ -1,16 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Itrabs</title>
   </head>
   <body>
     <div id="container">
       <div class="login">
-        <img src="../../images/Logo-login.png" alt="logo-da-empresa" />
+        <img src="{% static 'images/Logo-login.png' %}" alt="logo-da-empresa" />
         <h2>Entre na sua conta</h2>
 
         <form action="" id="form" method="POST">

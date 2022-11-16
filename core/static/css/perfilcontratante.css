@@ -1,0 +1,91 @@
+/*------------- GERAL -----------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --blue-color: #6e0085;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #00856f;
+
+  --button-shadow: #000000;
+
+  --light-300: 300;
+  --regular-400: 400;
+  --medium-500: 500;
+  --semibold-600: 600;
+  --bold-700: 700;
+}
+
+body {
+  background-color: #dce9e2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 110rem;
+}
+
+/*------------ HEADER -----------*/
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 5rem;
+}
+
+#header .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header .header-middle, #header .header-right {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+#header .header-middle li {
+  padding: 0rem 1.5rem;
+}
+
+#header .header-middle a {
+  text-decoration: none;
+  padding-bottom: 1rem;
+
+  font-weight: var(--semibold-600);
+  color: var(--blue-color);
+  font-size: 1.6rem;
+
+}
+
+#header .header-middle a:hover {
+  border-bottom: 0.5rem solid var(--blue-color);
+}
+
+#header .header-right a {
+  text-decoration: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+
+}
+
+#header .header-right #profile-image {
+  background-color: #00856f;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+
+  
+
+}

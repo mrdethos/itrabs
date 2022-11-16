@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="{% static 'css/home.css' %}" />
 
-  <title>Document</title>
+  <title>ITrabs</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
           <li><a href="#categorias">Categorias</a></li>
           <li><a href="#sobre">Sobre</a></li>
         </ul>
-        <a href="src/html/login.html" class="button">TORNE-SE PROFISSIONAL</a>
+        <a href="{% url 'login' %}" class="button">TORNE-SE PROFISSIONAL</a>
       </nav>
     </div>
   </header>
@@ -55,7 +55,7 @@
           Profissionais qualificados reunidos em um só lugar, com um único
           propósito: resolver seus problemas
         </p>
-        <a href="src/html/login.html" class="button">TORNE-SE PROFISSIONAL</a>
+        <a href="{% url 'login' %}" class="button">TORNE-SE PROFISSIONAL</a>
       </div>
     </div>
   </section>
@@ -126,7 +126,7 @@
             prática, sem muita burocracia
           </p>
           <div class="btn">
-            <a href="src/html/login.html" class="button">TORNE-SE PROFISSIONAL</a>
+            <a href="{% url 'login' %}" class="button">TORNE-SE PROFISSIONAL</a>
           </div>
         </div>
       </div>
@@ -144,13 +144,13 @@
         <div class="social-link">
           <ul>
             <li>
-              <a href="#"><img src="images/instagram 1.png" alt="instagram-logo" /></a>
+              <a href="#"><img src="{% static 'images/instagram 1.png' %}" alt="instagram-logo" /></a>
             </li>
             <li>
-              <a href="#"><img src="images/youtube 1.png" alt="youtube-logo" /></a>
+              <a href="#"><img src="{% static 'images/youtube 1.png' %}" alt="youtube-logo" /></a>
             </li>
             <li>
-              <a href="#"><img src="images/facebook 1.png" alt="facebook-logo" /></a>
+              <a href="#"><img src="{% static 'images/facebook 1.png' %}" alt="facebook-logo" /></a>
             </li>
           </ul>
         </div>
@@ -160,7 +160,7 @@
 
   <!-- ScrollReveal Lib-->
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="js/script.js"></script>
+  <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 </body>
 
 </html>
