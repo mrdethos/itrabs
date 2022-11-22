@@ -13,6 +13,12 @@
 </head>
 
 <body>
+
+  <div id="preloader">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KVbrHTRxgsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KVbrHTRxgsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
   {% include 'core/includes/navbar.html' %}
   <section id="hero">
     <div class="container">
@@ -128,6 +134,7 @@
 
   <!-- ScrollReveal Lib-->
   <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="{% static 'js/preloader.js' %}"></script>
   <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 </body>
 

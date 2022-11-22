@@ -33,19 +33,17 @@ body {
   width: 110rem;
 }
 
-#header, 
-#profile-type, 
+#header,
+#profile-type,
 #profile-info {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding-top: 5rem;
 }
 
 /*------------ HEADER -----------*/
-
-#header {
-  padding-top: 5rem;
-}
 
 #header .navigation {
   display: flex;
@@ -53,8 +51,7 @@ body {
   align-items: center;
 }
 
-#header .header-middle, 
-#header .header-right {
+#header .header-middle, #header .header-right {
   list-style: none;
   display: flex;
   align-items: center;
@@ -81,7 +78,8 @@ body {
 #header .header-right a {
   text-decoration: none;
   padding-left: 1rem;
-  padding-right: 0.8rem;
+  padding-right: 1rem;
+
 
 }
 
@@ -90,6 +88,7 @@ body {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 /*----HEADER-ONSCROLL-----*/
@@ -114,7 +113,7 @@ body {
   fill: var(--white-color);
 }
 
-/*------ PROFILES-SECTION ------*/
+/*------------PROFILE-SECTION------------*/
 
 #profile-type {
   padding-top: 3rem;
@@ -160,7 +159,6 @@ body {
   flex: 1;
   background-color: var(--blue-color);
   border-radius: 1rem;
-  height: 20rem;
 }
 
 #profile-info .info-division .right-info {
@@ -171,5 +169,88 @@ body {
 }
 
 
+/*-----------RIGHT-INFO----------------*/
 
+.right-info .contact {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 
+.right-info .contact h2 {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: var(--bold-700);
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.right-info .contact img {
+  padding-left: 1rem;
+  width: 2.5rem;
+
+  cursor: pointer;
+}
+
+.right-info #contacts-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-info #contacts-info a{
+  text-decoration: none;
+  color: var(--white-color);
+  padding-top: 1rem;
+}
+
+.right-info .social {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 2rem;
+}
+
+.right-info .social h2 {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: var(--bold-700);
+  display: flex;
+  justify-content: center;
+}
+
+.right-info .social .socials {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.right-info .social .socials a img{
+  width: 2rem;
+}
+
+.right-info .button {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
+}
+
+.right-info .button button{
+  background-color: var(--gray-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  color: var(--white-color);
+
+  border: none;
+  cursor: pointer;
+}
+
+.right-info .comments h2 {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: var(--bold-700);
+
+  display: flex;
+  justify-content: center;
+}

@@ -28,17 +28,10 @@
               {% endfor %}
             {% endfor %}
           {% endif %}
-
+          
           <label for="{{ form.username.id }}">Nome de usuário:</label>
           {{ form.username }}
-          <label>{{ form.username.help_text }}</label>
 
-          <label for="{{ form.first_name.id }}">Nome:</label>
-          {{ form.first_name }}
-
-          <label for="{{ form.last_name.id }}">Sobrenome:</label>
-          {{ form.last_name }}
-          
           <label for="{{ form.email.id }}">Email:</label>
           {{ form.email }}
 

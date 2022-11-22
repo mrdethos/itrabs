@@ -4,14 +4,15 @@ from django.contrib.auth import get_user_model
 
 
 class UserRegistrationForm(UserCreationForm):
-    email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Insira seu e-mail'}))
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Insira seu nome'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Insira seu sobrenome'}))
+    email = forms.EmailField(required=True)
+    
+    USERNAME_FIELD = 'email'
 
+    #email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Insira seu e-mail'}))
 
     class Meta:
         model = get_user_model()
-        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
 
     def save(self, commit=True):
         user = super(UserRegistrationForm, self).save(commit=False)

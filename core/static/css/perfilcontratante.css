@@ -33,14 +33,17 @@ body {
   width: 110rem;
 }
 
-/*------------ HEADER -----------*/
-#header {
+#header,
+#profile-type,
+#profile-info {
   display: flex;
   justify-content: center;
   align-items: center;
 
   padding-top: 5rem;
 }
+
+/*------------ HEADER -----------*/
 
 #header .navigation {
   display: flex;
@@ -85,7 +88,183 @@ body {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+  cursor: pointer;
+}
 
-  
+/*----HEADER-ONSCROLL-----*/
 
+#header.scroll {
+  background-color: var(--blue-color);
+}
+
+#header.scroll .logo path {
+  fill: var(--white-color);
+}
+
+#header.scroll .navigation .header-middle a {
+  color: var(--white-color);
+}
+
+#header.scroll .navigation .header-middle a:hover {
+  border-bottom: 0.5rem solid #ffffff;
+}
+
+#header.scroll .navigation .header-right a path {
+  fill: var(--white-color);
+}
+
+/*------------PROFILE-SECTION------------*/
+
+#profile-type {
+  padding-top: 3rem;
+}
+
+#profile-type .profiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile-type .profiles .profissional {
+  padding-right: 3rem;
+}
+
+#profile-type .profiles .contratante {
+  padding-left: 3rem;
+}
+
+#profile-type .profiles a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding-bottom: 0.5rem;
+  font-weight: var(--semibold-600);
+  color: var(--blue-color);
+}
+
+#profile-type .profiles a:hover {
+  border-bottom: 0.5rem solid var(--blue-color);
+}
+
+/*--------- PROFILE-INFO -----------*/
+
+#profile-info {
+  padding-top: 5rem;
+}
+
+#profile-info .info-division {
+  display: flex;
+}
+
+#profile-info .info-division .left-info {
+  flex: 1;
+  background-color: var(--blue-color);
+  border-radius: 1rem;
+}
+
+#profile-info .info-division .right-info {
+  width: 24.3rem;
+  background-color: var(--blue-color);
+  margin-left: 2.2rem;
+  border-radius: 1rem;
+}
+
+/*-----------LEFT-INFO-----------------*/
+
+.left-info .row {
+  display: flex;
+}
+
+.left-info .profile-image {
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--gray-color);
+  border-radius: 50%;
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+
+/*-----------RIGHT-INFO----------------*/
+
+.right-info .contact {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.right-info .contact h2 {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: var(--bold-700);
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.right-info .contact img {
+  padding-left: 1rem;
+  width: 2.5rem;
+
+  cursor: pointer;
+}
+
+.right-info #contacts-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-info #contacts-info a{
+  text-decoration: none;
+  color: var(--white-color);
+  padding-top: 1rem;
+}
+
+.right-info .social {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 2rem;
+}
+
+.right-info .social h2 {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: var(--bold-700);
+  display: flex;
+  justify-content: center;
+}
+
+.right-info .social .socials {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.right-info .social .socials a img{
+  width: 2rem;
+}
+
+.right-info .button {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
+}
+
+.right-info .button button{
+  background-color: var(--gray-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  color: var(--white-color);
+
+  border: none;
+  cursor: pointer;
+}
+
+.right-info .comments h2 {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: var(--bold-700);
+
+  display: flex;
+  justify-content: center;
 }

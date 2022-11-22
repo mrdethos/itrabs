@@ -141,7 +141,7 @@ ul {
 
 #hero {
   height: 45rem;
-  background-image: url('../../images/Hero-Background.png');
+  background-image: url('../images/Hero-Background.png');
 }
 
 #hero .hero-content {
@@ -322,4 +322,19 @@ ul {
 
 #footer .footer-info .social-link ul li {
   padding-left: 4rem;
+}
+
+/*------PRELOADER-----*/
+
+#preloader {
+  background: var(--black-color) url(../images/loader.gif) no-repeat center center;
+  background-size: 20%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+#preloader iframe {
+  display: none;
 }
