@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login as auth_login, authenticate, logout as auth_logout
+from django.contrib.auth import get_user_model, login as auth_login, authenticate, logout as auth_logout, get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, UserLoginForm, UserUpdateForm
 
 
 def signup(request):
@@ -14,9 +14,8 @@ def signup(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            auth_login(request, user)        
-            messages.success(request, f'Conta criada com sucesso')
-            return redirect('/')
+            auth_login(request, user)
+            return redirect('home')
         else:
             for error in list(form.errors.values()):
                 messages.error(request, error)
@@ -40,9 +39,9 @@ def login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 auth_login(request, user)
-                return redirect('home')
+                return redirect('customer_profile', username)
             else:
-                messages.error(request, "Uusário ou senha inválido.")
+                messages.error(request, "Usuário ou senha inválido.")
         else:
             messages.error(request, "Usuário ou senha inválido.")
     form = AuthenticationForm()
@@ -55,5 +54,41 @@ def login(request):
 @login_required
 def logout(request):
     auth_logout(request)
-    messages.info(request, "Sessão encerrada com sucesso.")
+    return redirect('home')
+
+def customer_profile(request, username):
+    if request.method == 'POST':
+        user = request.user
+        form = UserUpdateForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            user_form = form.save()
+            return redirect('customer_profile', user_form.username)
+    
+    user = get_user_model().objects.filter(username=username).first()
+    if user:
+        form = UserUpdateForm(instance=user)
+        return render(
+            request=request,
+            template_name='users/perfilcontratante.html',
+            context={'form': form}
+            )
+    return redirect('home')
+
+def professional_profile(request, username):
+    if request.method == 'POST':
+        user = request.user
+        form = UserUpdateForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            user_form = form.save()
+            return redirect('professional_profile', user_form.username)
+
+
+    user = get_user_model().objects.filter(username=username).first()
+    if user:
+        form = UserUpdateForm(instance=user)
+        return render(
+            request=request,
+            template_name='users/perfilprofissional.html',
+            context={'form': form}
+            )
     return redirect('home')
