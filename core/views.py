@@ -7,7 +7,11 @@ def homespanish(request):
     return render(request, 'core/home-spanish.html')
 
 def plans(request):
-    return render(request, 'core/planos.html')
+    if request.user.is_authenticated:
+        return render(request, 'core/planos.html')
+    return redirect('home')
 
 def find_professionals(request):
-    return render(request, 'core/encontrarprofissionais.html')
+    if request.user.is_authenticated:
+        return render(request, 'core/encontrarprofissionais.html')
+    return redirect('home')
