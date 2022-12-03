@@ -1,0 +1,476 @@
+/*------------- GERAL -----------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --purple-color: #6e0085;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --green-color: #00856f;
+  --gray-color: #D9D9D9
+
+  --button-shadow: #000000;
+
+  --light-300: 300;
+  --regular-400: 400;
+  --medium-500: 500;
+  --semibold-600: 600;
+  --bold-700: 700;
+}
+
+body {
+  background-color: #dce9e2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 110rem;
+}
+
+
+#header,
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*------------ HEADER -----------*/
+
+#header {
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+#header .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header .header-middle,
+#header .header-right {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+#header .header-middle li {
+  padding: 0rem 1.5rem;
+}
+
+#header .header-middle a {
+  text-decoration: none;
+  padding-bottom: 1rem;
+
+  font-weight: var(--semibold-600);
+  color: var(--purple-color);
+  font-size: 1.6rem;
+
+}
+
+#header .header-middle a:hover {
+  border-bottom: 0.5rem solid var(--purple-color);
+}
+
+#header .header-right a {
+  text-decoration: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+
+}
+
+#header .header-right #profile-image {
+  background-color: #00856f;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/*----HEADER-ONSCROLL-----*/
+
+#header.scroll {
+  background-color: var(--purple-color);
+}
+
+#header.scroll .logo path {
+  fill: var(--white-color);
+}
+
+#header.scroll .navigation .header-middle a {
+  color: var(--white-color);
+}
+
+#header.scroll .navigation .header-middle a:hover {
+  border-bottom: 0.5rem solid #ffffff;
+}
+
+#header.scroll .navigation .header-right a path {
+  fill: var(--white-color);
+}
+
+/*------------PROFISSIONAIS-SECTION------------*/
+
+#container {
+  padding-top: 10rem;
+  min-height: 80vh;
+  background-color: var(--gray-color);
+  display: flex;
+  justify-content: center;
+}
+
+#container > section.container {
+  width: 100%;
+  padding-top: 4rem;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: start;
+}
+
+#container > section.left-info {
+  flex: 1;
+  width: 30%;
+  padding: 4rem 2rem 0 13rem;
+}
+
+#container > section.right-info {
+  flex: 2;
+  padding: 4rem 13rem 0 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.filter-card {
+  width: 100%;
+  padding: 3.5rem 2.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.1rem;
+
+  border-radius: 16px;
+  background-color: var(--green-color);
+  margin-bottom:12rem;
+}
+
+.filter-card h3 {
+  font-weight: var(--bold-700);
+  color: var(--white-color);
+  font-size: 2rem;
+}
+
+.filter-card span {
+  font-weight: var(--medium-500);
+  color: var(--white-color);
+  font-size: 1.4rem;
+}
+
+.filter-radio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-radio-container .filter-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-radio-container .filter-radio .radio-input {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--black-color);
+  font-size: 1.3rem;
+}
+
+#habilits {
+  display: flex;
+  width:90%;
+  height:2.5rem;
+  border:none;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--black-color);
+  font-size:1.2rem ;
+  font-weight: var(--medium-500);
+}
+
+.filter-radio-container .languages {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #D9D9D9;
+  border-radius: 26px;
+  width: 14rem;
+  height: 3rem;
+  margin-right:1rem;
+  border:none;
+  font-weight: (var(--regular-400));
+}
+
+button:hover {
+  background-color:#A7A3A2;
+  color: var(--white-color);
+  font-weight: var(--medium-500);
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+.filter-radio-container .save {
+  display: flex;
+  justify-content:center;
+  padding-top: 2rem;
+}
+
+.right-info .search{
+ display:flex;
+ flex-direction: row;
+ background-color: var(--white-color);
+ border-radius: 2.4rem;
+ height: 5rem;
+}
+
+ .right-info .search #search{
+  width: 100%;
+  border-radius: 2.4rem;
+  padding-left: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--green-color);
+  font-weight: var(--bold-700);
+  font-size: 1.7rem;
+  border:none;
+ }
+ 
+ .right-info .search img{
+  padding: 1rem;
+
+ }
+
+
+ .right-info .search input:focus{
+  box-shadow: 0 0 0 0;
+  border:none;
+  outline: 0;
+ }
+
+.profile-card {
+  display: flex;
+  flex: 1;
+  padding: 3.2rem;
+
+  border-radius: 16px;
+  background-color: var(--purple-color);
+}
+
+.profile-card .left-info-profile, .profile-card .right-info-profile {
+  width: 100%;
+}
+
+.profile-card .left-info-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.profile-card .right-info-profile {
+  width: 80%;
+  padding-left: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.left-info-profile header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.left-info-profile header .icon-container {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 100%;
+  background-color: var(--green-color);
+}
+
+.left-info-profile header .user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.left-info-profile header .user-info h2 {
+  font-weight: var(--bold-700);
+  color: var(--white-color);
+  font-size: 2.4rem;
+}
+
+.left-info-profile header .user-info .rating {
+display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.left-info-profile header .user-info .rating .stars {
+display: flex;
+  align-items: center;
+}
+
+.left-info-profile header .user-info .rating span {
+font-weight: var(--bold-700);
+  color: var(--white-color);
+  font-size: 1.2rem;
+}
+
+.left-info-profile main {
+font-weight: var(--regular-400);
+  color: var(--white-color);
+  font-size: 1.4rem;
+}
+
+.left-info-profile footer {
+display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.left-info-profile footer strong {
+font-weight: var(--bold-700);
+  color: var(--white-color);
+  font-size: 1.2rem;
+}
+
+.left-info-profile footer strong.tags-title {
+font-weight: var(--bold-700);
+  color: var(--white-color);
+  font-size: 1.2rem;
+
+  text-transform: uppercase;
+}
+
+.right-info #last{
+ margin-bottom: 8rem;
+}
+
+.right-info-profile .price {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.right-info-profile h3 {
+  font-weight: var(--bold-700);
+  color: var(--white-color);
+  font-size: 1.6rem;
+
+  text-transform: uppercase;
+}
+
+.right-info-profile .price strong {
+  font-weight: var(--medium-500);
+  color: var(--white-color);
+  font-size: 1.6rem;
+}
+
+.right-info-profile .languages {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.right-info-profile .languages strong {
+  font-weight: var(--medium-500);
+  color: var(--white-color);
+  font-size: 1.2rem;
+}
+
+.right-info-profile .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.right-info-profile .buttons button {
+  width: 100%;
+  padding: 18px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: var(--medium-500);
+  color: var(--green-color);
+  font-size: 1.4rem;
+
+  background-color: var(--white-color);
+  border: 1px solid var(--green-color);
+
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+.right-info-profile .buttons button:hover {
+  color: var(--white-color);
+  background-color: var(--green-color);
+}
+
+/*-------------FOOTER----------*/
+
+#footer {
+  background-color: var(--purple-color);
+}
+
+#footer .footer-division {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer .itrabs-copy {
+  padding-top: 3.8rem;
+  padding-bottom: 2.4rem;
+}
+
+#footer .itrabs-copy p {
+  color: var(--white-color);
+  font-size: 1.4rem;
+  font-weight: var(--medium-500);
+  padding-top: 1.4rem;
+}
+
+#footer .socials ul {
+  display: flex;
+  align-items: center;
+}
+
+#footer .socials ul li {
+  list-style: none;
+  padding-left: 2.8rem;
+}

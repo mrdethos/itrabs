@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login as auth_login, authenticate, logout as auth_logout, get_user_model
+from django.contrib.auth import get_user_model, login as auth_login, authenticate, logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm, UserLoginForm, UserUpdateForm
+from .forms import UserRegistrationForm, UserUpdateForm
 
 
 def signup(request):

@@ -2,16 +2,12 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'css/perfilprofissional.css' %}" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/planos.css' %}">
   <title>Itrabs</title>
 </head>
-
 <body>
   <header id="header">
     <div class="container">
@@ -54,7 +50,6 @@
           <li><a href="./encontrarprofissionais.html">ENCONTRAR PROFISSIONAIS</a></li>
           <li><a href="./perfilprofissional.html">MEUS PERFIS</a></li>
           <li><a href="./planos.html">PLANOS</a></li>
-          <li><a href="./planos.html">LOGOUT</a></li>
         </ul>
         <div class="header-right">
           <a href="#">
@@ -94,102 +89,46 @@
     </div>
   </header>
 
-  <section id="profile-type">
+  <section id="planos">
     <div class="container">
-      <div class="profiles">
-        <div class="profissional"><a href="{% url 'professional_profile' form.instance.username %}">Perfil Profissional</a></div>
-        <div class="contratante"><a href="{% url 'customer_profile' form.instance.username %}">Perfil contratante</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="profile-info">
-    <div class="container">
-      <div class="info-division">
-
-        <div class="left-info">
-          <div class="row">
-            <div class="profile-image"></div>
-            <div class="profile-information">
-              <h2><span>{{ form.instance.username }}</span></h2>
-              <p><span>A profissão aparece aqui</span></p>
-              <div class="rating">
-                <img src="{% static 'images/Star.svg' %}">
-                <img src="{% static 'images/Star.svg' %}">
-                <img src="{% static 'images/Star.svg' %}">
-                <img src="{% static 'images/Star.svg' %}">
-                <img src="{% static 'images/Star.svg' %}">
-              </div>
-            </div>
-            <div class="btn-message">                
-              <button>CONVERSAR</button>
-              <div class="hour-price">
-                <span>Preço por hora:</span></br>
-                <div class="price">
-                  <span>BRL <span>00.00</span></span>
-                </div>
-              </div>                
-            </div>
-          </div>
-
+      <h1>Deixe o seu perfil personalizado e profissional <br>com nossos planos</h1>
+      <p>Não perca a chance de se destacar entre muitos profissionais</p>
+      <div class="plans-type">
+        <div class="plan-card">
+          <h2>Standard</h2>
           <hr>
-
-          <div class="about-box box">
-            <span>
-              <div class="box-label">
-                <h3>Sobre mim</h3>
-                <img src="{% static 'images/EditPencil.svg' %}">
-              </div>
-            </span>
-            <div class="about">
-              <p>
-                <span>
-                  Algo sobre o usuário aqui
-                </span>
-              </p>
-            </div>
-          </div>
-
-          <div class="professional-history box">             
-              <span>
-                <div class="box-label">
-                  <h3>Histórico Profissional</h3>
-                  <img src="{% static 'images/EditPencil.svg' %}"> 
-               </div>             
-              </span>
-            <div class="about">
-              <p>
-                <span>
-                  A trajetoria do usuário aqui
-                </span>
-              </p>
-            </div>
+          <ul>
+            <li>2 posts de serviços</li>
+            <li>Limitação a 3 imagens de portfolio no perfil</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <h2>Gold</h2>
+          <hr>
+          <ul>
+            <li>4 posts de serviços</li>
+            <li>5 imagens de porfolio</li>
+            <li>Anúncios com grau 2 de prioridade</li>
+            <li>Emblemas oficiais do site</li>
+          </ul>
+          <div class="button">
+            <span>Assinar Plano</span>
           </div>
         </div>
-
-        <div class="right-info">
-          <div class="contact">
-            <h2>Contatos<img src="{% static 'images/EditPencil.svg' %}" id="edit"></h2>
-            <div id="contacts-info">
-              <a href="#">{{ form.instance.email }}</a>
-              <a href="#">{{ form.instance.phone_number }}</a>
-            </div>
-          </div>
-          <div class="social">
-            <h2>Redes Sociais</h2>
-            <div class="socials">
-              <a href="#"><img src="{% static 'images/instagram.svg' %}"></a>
-              <a href="#"><img src="{% static 'images/facebook.svg' %}"></a>
-              <a href="#"><img src="{% static 'images/TwitterLogo.svg' %}"></a>
-            </div>
-          </div>
-          <div class="button">
-            <a href="#">
-              <button>COMPARTILHE ESSE PERFIL</button>
-            </a>
-          </div>
-          <div class="comments">
-            <h2>Comentários</h2>
+        <div class="plan-card">
+          <h2>Platinium</h2>
+          <hr>
+          <ul>
+            <li>8 posts de serviços</li>
+            <li>Perfil ganha impulsionamento</li>
+            <li>Anúncios com grau 1 de prioridade</li>
+            <li>Emblemas oficiais do site</li>
+            <li>Capacidade de enviar arquivos grandes</li>
+            <li>Libera a função de vídeo apresentação</li>
+            <li>Chat de vídeo liberado</li>
+          </ul>
+          <div class="button" style="margin-top: 6rem;">
+            <span>Assinar Plano</span>
           </div>
         </div>
       </div>
@@ -200,6 +139,6 @@
 
   <!-- ScrollReveal Lib-->
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="{% static 'js/script.js' %}"></script>
+  <script src="../../js/script.js"></script>
 </body>
 </html>

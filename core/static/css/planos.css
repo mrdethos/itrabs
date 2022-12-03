@@ -1,0 +1,230 @@
+/*------------- GERAL -----------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --blue-color: #6e0085;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #00856f;
+
+  --button-shadow: #000000;
+
+  --light-300: 300;
+  --regular-400: 400;
+  --medium-500: 500;
+  --semibold-600: 600;
+  --bold-700: 700;
+}
+
+body {
+  background-color: #dce9e2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 110rem;
+}
+
+
+#header,
+#footer,
+#planos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*------------ HEADER -----------*/
+
+#header {
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+#header .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header .header-middle,
+#header .header-right {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+#header .header-middle li {
+  padding: 0rem 1.5rem;
+}
+
+#header .header-middle a {
+  text-decoration: none;
+  padding-bottom: 1rem;
+
+  font-weight: var(--semibold-600);
+  color: var(--blue-color);
+  font-size: 1.6rem;
+
+}
+
+#header .header-middle a:hover {
+  border-bottom: 0.5rem solid var(--blue-color);
+}
+
+#header .header-right a {
+  text-decoration: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+
+}
+
+#header .header-right #profile-image {
+  background-color: #00856f;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/*----HEADER-ONSCROLL-----*/
+
+#header.scroll {
+  background-color: var(--blue-color);
+}
+
+#header.scroll .logo path {
+  fill: var(--white-color);
+}
+
+#header.scroll .navigation .header-middle a {
+  color: var(--white-color);
+}
+
+#header.scroll .navigation .header-middle a:hover {
+  border-bottom: 0.5rem solid #ffffff;
+}
+
+#header.scroll .navigation .header-right a path {
+  fill: var(--white-color);
+}
+
+/*-------------PLANO------------*/
+
+#planos {
+  padding-top: 6rem;
+  margin-top: 6.5rem;
+  background-color: var(--gray-color);
+}
+
+#planos h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: var(--white-color);
+}
+
+#planos p {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#planos .plans-type {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+
+#planos .plan-card {
+  background-color: var(--blue-color);
+  padding: 2rem;
+  width: 25rem;
+  height: 40rem;
+}
+
+#planos .plan-card h2 {
+  text-align: center;
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+#planos .plan-card hr {
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+#planos .plan-card ul {
+  list-style: none;
+  color: var(--white-color);
+}
+
+#planos .plan-card ul li {
+  padding-top: 2rem;
+  font-size: 1rem;
+}
+
+#planos .plan-card .button {
+  display: flex;
+  justify-content: center;
+  background-color: var(--gray-color);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  margin-top: 16rem;
+}
+
+#planos .plan-card .button span {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: var(--semibold-600);
+}
+
+
+/*-------------FOOTER----------*/
+
+#footer {
+  background-color: var(--blue-color);
+}
+
+#footer .footer-division {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer .itrabs-copy {
+  padding-top: 3.8rem;
+  padding-bottom: 2.4rem;
+}
+
+#footer .itrabs-copy p {
+  color: var(--white-color);
+  font-size: 1.4rem;
+  font-weight: var(--medium-500);
+  padding-top: 1.4rem;
+}
+
+#footer .socials ul {
+  display: flex;
+  align-items: center;
+}
+
+#footer .socials ul li {
+  list-style: none;
+  padding-left: 2.8rem;
+}
