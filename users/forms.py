@@ -5,7 +5,6 @@ from django.contrib.auth import get_user_model
 
 class UserRegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
-    #email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Insira seu e-mail'}))
 
     class Meta:
         model = get_user_model()
