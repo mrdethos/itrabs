@@ -29,19 +29,18 @@ class UserLoginForm(AuthenticationForm):
         attrs={'class': 'form-control'}
     ))
 
-
-class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
-
+class UserUpdateFormAboutGeneral(forms.ModelForm):
     class Meta:
         model = get_user_model()
         fields = [
-            'first_name',
-            'last_name',
+            'about_general',
+            ]
+
+class UserUpdateFormRightInfo(forms.ModelForm):
+    email = forms.EmailField()
+    class Meta:
+        model = get_user_model()
+        fields = [
             'email',
             'phone_number',
-            'status',
-            'about_general',
-            'about_looking',
-            'about_expectation',
             ]

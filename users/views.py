@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model, login as auth_login, authenticate, logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm, UserUpdateForm
+from .forms import UserRegistrationForm, UserUpdateFormRightInfo, UserUpdateFormAboutGeneral
 
 
 def signup(request):
@@ -60,14 +60,19 @@ def customer_profile(request, username):
     if request.user.is_authenticated:
         if request.method == 'POST':
             user = request.user
-            form = UserUpdateForm(request.POST, request.FILES, instance=user)
-            if form.is_valid():
-                user_form = form.save()
-                return redirect('customer_profile', user_form.username)
-        
+            if 'update_right_info' in request.POST:
+                form = UserUpdateFormRightInfo(request.POST, request.FILES, instance=user)
+                if form.is_valid():
+                    user_form = form.save()
+                    return redirect('customer_profile', user_form.username)
+            elif 'update_general_info' in request.POST:
+                form = UserUpdateFormAboutGeneral(request.POST, request.FILES, instance=user)
+                if form.is_valid():
+                    user_form = form.save()
+                    return redirect('customer_profile', user_form.username)
         user = get_user_model().objects.filter(username=username).first()
         if user:
-            form = UserUpdateForm(instance=user)
+            form = UserUpdateFormRightInfo(instance=user)
             return render(
                 request=request,
                 template_name='users/perfilcontratante.html',
@@ -80,14 +85,15 @@ def professional_profile(request, username):
     if request.user.is_authenticated:
         if request.method == 'POST':
             user = request.user
-            form = UserUpdateForm(request.POST, request.FILES, instance=user)
-            if form.is_valid():
-                user_form = form.save()
-                return redirect('professional_profile', user_form.username)
+            if 'update_right_info' in request.POST:
+                form = UserUpdateFormRightInfo(request.POST, request.FILES, instance=user)
+                if form.is_valid():
+                    user_form = form.save()
+                    return redirect('professional_profile', user_form.username)
 
         user = get_user_model().objects.filter(username=username).first()
         if user:
-            form = UserUpdateForm(instance=user)
+            form = UserUpdateFormRightInfo(instance=user)
             return render(
                 request=request,
                 template_name='users/perfilprofissional.html',

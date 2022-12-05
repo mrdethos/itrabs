@@ -1,9 +1,11 @@
 {% load static %}
 
 <style>
-  textarea#id_about_general, #id_about_looking, #id_about_expectation {
-  width: 100%;
-  height: 100%;
+  textarea#id_about_general,
+  #id_about_looking,
+  #id_about_expectation {
+    width: 100%;
+    height: 100%;
   }
 </style>
 
@@ -71,14 +73,20 @@
                   {{ form.instance.about_general }}
                 </span>
               </p>
+              <form method="POST">
+                {% csrf_token %}
                 {{ form.about_general }}
+
+
+                <input type="submit" id="button" value="Atualizar" name="update_general_info"/>
+              </form>
+
             </div>
           </div>
           <div class="user-will box">
             <span>
               <div class="box-label">
                 <h3>O que eu quero</h3>
-                <img src="{% static 'images/EditPencil.svg' %}">
               </div>
             </span>
             <div class="about">
@@ -94,7 +102,6 @@
             <span>
               <div class="box-label">
                 <h3>O que eu espero de um profissional</h3>
-                <img src="{% static 'images/EditPencil.svg' %}">
               </div>
             </span>
             <div class="about">
@@ -114,9 +121,14 @@
             <h2>Contatos<img src="{% static 'images/EditPencil.svg' %}" id="edit"></h2>
             <div id="contacts-info">
               <a href="#">{{ form.instance.email }}</a>
-              {{ form.email }}
+              <form method="POST" id="form">
+                {% csrf_token %}
+                {{ form.email }}
               <a href="#">{{ form.instance.phone_number }}</a>
-              {{ form.phone_number }}
+                {% csrf_token %}
+                {{ form.phone_number }}
+                <input type="submit" id="button" value="Atualizar" name="update_right_info" />
+              </form>
             </div>
           </div>
           <div class="social">
