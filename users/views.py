@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model, login as auth_login, authenticate, logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm, UserUpdateFormRightInfo, UserUpdateFormAboutGeneral
+from .forms import UserRegistrationForm, UserUpdateFormRightInfo, UserUpdateFormAboutGeneral, UserUpdateFormAboutLooking, UserUpdateFormAboutExpectation
 
 
 def signup(request):
@@ -70,14 +70,31 @@ def customer_profile(request, username):
                 if form.is_valid():
                     user_form = form.save()
                     return redirect('customer_profile', user_form.username)
+            elif 'update_looking_info' in request.POST:
+                form = UserUpdateFormAboutLooking(request.POST, request.FILES, instance=user)
+                if form.is_valid():
+                    user_form = form.save()
+                    return redirect('customer_profile', user_form.username)
+            elif 'about_expectation' in request.POST:
+                form = UserUpdateFormAboutExpectation(request.POST, request.FILES, instance=user)
+                if form.is_valid():
+                    user_form = form.save()
+                    return redirect('customer_profile', user_form.username)
         user = get_user_model().objects.filter(username=username).first()
         if user:
-            form = UserUpdateFormRightInfo(instance=user)
+            form_right_info = UserUpdateFormRightInfo(instance=user)
+            form_general_info = UserUpdateFormAboutGeneral(instance=user)
+            form_looking_info = UserUpdateFormAboutLooking(instance=user)
+            form_expectation_info = UserUpdateFormAboutExpectation(instance=user)
             return render(
                 request=request,
                 template_name='users/perfilcontratante.html',
-                context={'form': form}
-                )
+                context={
+                    'form': form_right_info,
+                    'form_general_info': form_general_info,
+                    'form_looking_info': form_looking_info,
+                    'form_expectation_info': form_expectation_info,
+                })
         return redirect('home')
     return redirect('home')
 

@@ -75,12 +75,9 @@
               </p>
               <form method="POST">
                 {% csrf_token %}
-                {{ form.about_general }}
-
-
+                {{ form_general_info.about_general }}
                 <input type="submit" id="button" value="Atualizar" name="update_general_info"/>
               </form>
-
             </div>
           </div>
           <div class="user-will box">
@@ -95,7 +92,11 @@
                   {{ form.instance.about_looking }}
                 </span>
               </p>
-              {{ form.about_looking }}
+              <form method="POST">
+                {% csrf_token %}
+                {{ form_looking_info.about_looking }}
+                <input type="submit" id="button" value="Atualizar" name="update_looking_info">
+              </form>
             </div>
           </div>
           <div class="professional-wait box">
@@ -110,10 +111,13 @@
                   {{ form.instance.about_expectation }}
                 </span>
               </p>
-              {{ form.about_expectation }}
+              <form method="POST">
+                {% csrf_token %}
+                {{ form_expectation_info.about_expectation }}
+                <input type="submit" id="button" value="Atualizar" name="update_expectation_info">
+              </form>
             </div>
           </div>
-
         </div>
 
         <div class="right-info">

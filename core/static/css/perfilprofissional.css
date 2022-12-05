@@ -35,15 +35,23 @@ body {
 
 #header,
 #profile-type,
-#profile-info {
+#profile-info,
+#footer {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding-top: 5rem;
 }
 
 /*------------ HEADER -----------*/
+
+#header {
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
 
 #header .navigation {
   display: flex;
@@ -51,7 +59,8 @@ body {
   align-items: center;
 }
 
-#header .header-middle, #header .header-right {
+#header .header-middle,
+#header .header-right {
   list-style: none;
   display: flex;
   align-items: center;
@@ -116,7 +125,7 @@ body {
 /*------------PROFILE-SECTION------------*/
 
 #profile-type {
-  padding-top: 3rem;
+  padding-top: 10rem;
 }
 
 #profile-type .profiles {
@@ -149,6 +158,7 @@ body {
 
 #profile-info {
   padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 #profile-info .info-division {
@@ -168,8 +178,112 @@ body {
   border-radius: 1rem;
 }
 
+/*-----------LEFT-INFO-----------------*/
+
+.left-info .row {
+  display: flex;
+}
+
+.left-info .profile-image {
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--gray-color);
+  border-radius: 50%;
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+
+.left-info h2 {
+  color: var(--white-color);
+  font-size: 3rem;
+  margin-top: 3.4rem;
+  margin-left: 3rem;
+}
+
+.left-info p {
+  color: var(--white-color);
+  font-weight: var(--bold-700);
+  font-size: 1.4rem;
+  margin-left: 3rem;
+  padding-top: 0.5rem;
+}
+
+.left-info .rating {
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+.left-info .btn-message button {
+  background-color: var(--gray-color);
+  color: var(--white-color);
+  padding: 0.8rem;
+  border-radius: 5rem;
+  border: none;
+  margin-top: 3.8rem;
+  margin-left: 14rem;
+  width: 15rem;
+
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+}
+
+.left-info .hour-price {
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.left-info .hour-price span {
+  color: var(--white-color);
+  font-size: 1.4rem;
+  margin-top: 0.9rem;
+  font-weight: var(--regular-400);
+}
+
+.left-info hr {
+  margin: auto;
+  width: 75rem;
+  margin-top: 4rem;
+}
+
+.left-info .box {
+  width: 75rem;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.left-info .box .box-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-info .box .box-label h3 {
+  font-size: 1.6rem;
+  color: var(--white-color);
+}
+
+.left-info .box .box-label img {
+  width: 1.8rem;
+  cursor: pointer;
+}
+
+.left-info .box .about {
+  height: 5rem;
+}
+
+.left-info .box .about p {
+  margin-left: 0;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--white-color);
+  font-weight: var(--medium-500);
+}
 
 /*-----------RIGHT-INFO----------------*/
+
+.right-info {
+  max-height: 50rem;
+}
 
 .right-info .contact {
   padding-left: 2.5rem;
@@ -199,16 +313,16 @@ body {
   flex-direction: column;
 }
 
-.right-info #contacts-info a{
+.right-info #contacts-info a {
   text-decoration: none;
   color: var(--white-color);
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .right-info .social {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 .right-info .social h2 {
@@ -225,18 +339,18 @@ body {
   justify-content: space-evenly;
 }
 
-.right-info .social .socials a img{
+.right-info .social .socials a img {
   width: 2rem;
 }
 
 .right-info .button {
   display: flex;
   justify-content: center;
-  padding-top: 2.2rem;
+  padding-top: 3.4rem;
   padding-bottom: 2.2rem;
 }
 
-.right-info .button button{
+.right-info .button button {
   background-color: var(--gray-color);
   border-radius: 1rem;
   padding: 1rem;
@@ -253,4 +367,38 @@ body {
 
   display: flex;
   justify-content: center;
+}
+
+/*-------------FOOTER----------*/
+
+#footer {
+  background-color: var(--blue-color);
+}
+
+#footer .footer-division {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer .itrabs-copy {
+  padding-top: 3.8rem;
+  padding-bottom: 2.4rem;
+}
+
+#footer .itrabs-copy p {
+  color: var(--white-color);
+  font-size: 1.4rem;
+  font-weight: var(--medium-500);
+  padding-top: 1.4rem;
+}
+
+#footer .socials ul {
+  display: flex;
+  align-items: center;
+}
+
+#footer .socials ul li {
+  list-style: none;
+  padding-left: 2.8rem;
 }

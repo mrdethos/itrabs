@@ -32,9 +32,17 @@ class UserLoginForm(AuthenticationForm):
 class UserUpdateFormAboutGeneral(forms.ModelForm):
     class Meta:
         model = get_user_model()
-        fields = [
-            'about_general',
-            ]
+        fields = ['about_general']
+
+class UserUpdateFormAboutLooking(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ['about_looking']
+
+class UserUpdateFormAboutExpectation(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ['about_expectation']
 
 class UserUpdateFormRightInfo(forms.ModelForm):
     email = forms.EmailField()

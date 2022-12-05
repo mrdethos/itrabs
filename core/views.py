@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from users.models import CustomUser
 
 def home(request):
     return render(request, 'core/home.html')
@@ -13,5 +14,8 @@ def plans(request):
 
 def find_professionals(request):
     if request.user.is_authenticated:
-        return render(request, 'core/encontrarprofissionais.html')
+        display_user = CustomUser.objects.all()
+        return render(request, 'core/encontrarprofissionais.html', {
+            'display_user': display_user,
+        })
     return redirect('home')

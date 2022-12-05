@@ -39,7 +39,7 @@
         </a>
         <ul class="header-middle">
           <li><a href="{% url 'find_professionals' %}">ENCONTRAR PROFISSIONAIS</a></li>
-          <li><a href="{% url 'customer_profile' form.instance.username %}">MEUS PERFIS</a></li>
+          <li><a href="{% url 'customer_profile' user.username %}">MEUS PERFIS</a></li>
           <li><a href="{% url 'plans' %}">PLANOS</a></li>
         </ul>
         <div class="header-right">
@@ -81,9 +81,6 @@
   </header>
 
 {% else %}
-
-
-
 
 <header id="header">
     <div class="container">
