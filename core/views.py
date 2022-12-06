@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from users.models import CustomUser
+from django.db.models import Q
 
 def home(request):
     if request.user.is_authenticated:
@@ -26,7 +27,11 @@ def find_professionals(request):
 def search(request):
     if request.user.is_authenticated:
         search_data = request.POST.get('search_data')
-        searched = CustomUser.objects.filter(username__contains=search_data)
+        #searched = CustomUser.objects.filter(username__contains=search_data)
+        searched = CustomUser.objects.filter(Q(username__contains=search_data) |
+                                             Q(languages__contains=search_data) |
+                                             Q(email__contains=search_data) |
+                                             Q(category__contains=search_data))
         return render(request, 'core/search.html', {
             'users': searched,
         })
