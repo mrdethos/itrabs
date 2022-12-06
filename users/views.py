@@ -8,14 +8,15 @@ from .forms import UserRegistrationForm, UserUpdateFormRightInfo, UserUpdateForm
 
 def signup(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('customer_profile', user.username)
+        #return redirect('home')
     
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
-            return redirect('home')
+            return redirect('customer_profile', user.username)
         else:
             for error in list(form.errors.values()):
                 messages.error(request, error)
@@ -29,7 +30,7 @@ def signup(request):
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('customer_profile', user.username)
 
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -95,7 +96,7 @@ def customer_profile(request, username):
                     'form_looking_info': form_looking_info,
                     'form_expectation_info': form_expectation_info,
                 })
-        return redirect('home')
+        return redirect('customer_profile', user.username)
     return redirect('home')
 
 def professional_profile(request, username):

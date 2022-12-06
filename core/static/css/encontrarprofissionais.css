@@ -202,6 +202,10 @@ body {
   font-size: 1.3rem;
 }
 
+.button a {
+  Text-decoration: none;
+  }
+
 #habilits {
   display: flex;
   width:90%;
