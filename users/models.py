@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from taggit.managers import TaggableManager
+from multiselectfield import MultiSelectField
 
 class CustomUser(AbstractUser):
     STATUS = (
@@ -8,9 +10,9 @@ class CustomUser(AbstractUser):
         ('platinum', 'platinum')
     )
     LANGUAGES = (
-        ('português', 'português'),
-        ('inglês', 'inglês'),
-        ('espanhol', 'espanhol'),
+        ('Português', 'Português'),
+        ('Inglês', 'Inglês'),
+        ('Espanhol', 'Espanhol'),
     )
     CATEGORY = (
         ('Não especificado', 'Não especificado'),
@@ -44,7 +46,7 @@ class CustomUser(AbstractUser):
     currency =  models.CharField('Currency', max_length=3, choices=CURRENCY, default='BRL')
     currency_amount = models.DecimalField('Amount of currency', max_digits=10, decimal_places=2, default=0)
 
-    #languages = models.CharField(max_length=15, choices=LANGUAGES, default=)
+    languages = MultiSelectField(max_length=30, choices=LANGUAGES, default='Português')
 
     def __str__(self):
         return self.email
