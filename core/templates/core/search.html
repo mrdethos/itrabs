@@ -18,7 +18,6 @@
     <section class="left-info">
       <div class="filter-card">
         <h3>Encontre profissionais</h3>
-
         <div class="filter-radio-container">
           <span>CATEGORIAS DE SERVIÇOS</span>
 
@@ -91,15 +90,17 @@
       </div>
     </section>
 
+
     <section class="right-info">
-      <form action="{% url 'search' %}" method="POST">
-        {% csrf_token %}
-        <div class="search">
-            <input type="text" id="search" name="search_data" placeholder="Buscar por tags, palavras chaves ou serviço">
-            <input type="image"src="{% static 'images/search-icon.png' %}" alt="ícone de lupa" value="search">
-        </div>
-       </form>
-      {% for user in display_user %}
+        <form action="{% url 'search' %}" method="POST">
+            {% csrf_token %}
+            <div class="search">
+                <input type="text" id="search" name="search_data" placeholder="Buscar por tags, palavras chaves ou serviço">
+                <input type="image"src="{% static 'images/search-icon.png' %}" alt="ícone de lupa" value="search">
+            </div>
+        </form>
+
+      {% for user in users %}
 
       <div class="profile-card">
         <div class="left-info-profile">
@@ -159,7 +160,6 @@
       {% endfor %}
     </section>
   </section>
-
   {% include 'core/includes/footer.html' %}
 
   <!-- ScrollReveal Lib-->

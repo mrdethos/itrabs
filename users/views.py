@@ -8,8 +8,8 @@ from .forms import UserRegistrationForm, UserUpdateFormRightInfo, UserUpdateForm
 
 def signup(request):
     if request.user.is_authenticated:
+        user = request.user
         return redirect('customer_profile', user.username)
-        #return redirect('home')
     
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -30,8 +30,9 @@ def signup(request):
 
 def login(request):
     if request.user.is_authenticated:
+        user = request.user
         return redirect('customer_profile', user.username)
-
+    
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():

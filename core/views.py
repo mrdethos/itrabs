@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from users.models import CustomUser
 
 def home(request):
+    if request.user.is_authenticated:
+        user = request.user
+        return redirect('customer_profile', user.username)
     return render(request, 'core/home.html')
 
 def homespanish(request):
@@ -17,5 +20,14 @@ def find_professionals(request):
         display_user = CustomUser.objects.all()
         return render(request, 'core/encontrarprofissionais.html', {
             'display_user': display_user,
+        })
+    return redirect('home')
+
+def search(request):
+    if request.user.is_authenticated:
+        search_data = request.POST.get('search_data')
+        searched = CustomUser.objects.filter(username__contains=search_data)
+        return render(request, 'core/search.html', {
+            'users': searched,
         })
     return redirect('home')

@@ -12,3 +12,7 @@ function showNavOnScroll() {
     header.classList.remove('scroll')
   }
 }
+
+document.getElementById("botaoperfil").onclick = function() {
+  location.href = "{% url 'encontrarprofissionais.html' %}"
+}
