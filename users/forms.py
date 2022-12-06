@@ -52,3 +52,26 @@ class UserUpdateFormRightInfo(forms.ModelForm):
             'email',
             'phone_number',
             ]
+
+class UserUpdateFormAboutProfessional(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ['about_professional']
+
+class UserUpdateFormAboutProfessionalHistory(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ['professional_history']
+
+class UserUpdateFormAboutAdvertisement(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = [
+            'about_advertisement',
+            'currency',
+            'currency_amount',
+            'availability',
+            'languages',
+            'category',
+            ]
+

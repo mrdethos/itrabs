@@ -27,7 +27,6 @@ def find_professionals(request):
 def search(request):
     if request.user.is_authenticated:
         search_data = request.POST.get('search_data')
-        #searched = CustomUser.objects.filter(username__contains=search_data)
         searched = CustomUser.objects.filter(Q(username__contains=search_data) |
                                              Q(languages__contains=search_data) |
                                              Q(email__contains=search_data) |

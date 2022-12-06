@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model, login as auth_login, authenticate, logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm, UserUpdateFormRightInfo, UserUpdateFormAboutGeneral, UserUpdateFormAboutLooking, UserUpdateFormAboutExpectation
+from .forms import *
 
 
 def signup(request):
@@ -109,14 +109,36 @@ def professional_profile(request, username):
                 if form.is_valid():
                     user_form = form.save()
                     return redirect('professional_profile', user_form.username)
+            elif 'update_professional_info' in request.POST:
+                form = UserUpdateFormAboutProfessional(request.POST, request.FILES, instance=user)
+                if form.is_valid():
+                    user_form = form.save()
+                    return redirect('professional_profile', user_form.username)
+            elif 'update_professional_history_info' in request.POST:
+                form = UserUpdateFormAboutProfessionalHistory(request.POST, request.FILES, instance=user)
+                if form.is_valid():
+                    user_form = form.save()
+                    return redirect('professional_profile', user_form.username)
+            elif 'update_advertisement_info' in request.POST:
+                form = UserUpdateFormAboutAdvertisement(request.POST, request.FILES, instance=user)
+                if form.is_valid():
+                    user_form = form.save()
+                    return redirect('professional_profile', user_form.username)
 
         user = get_user_model().objects.filter(username=username).first()
         if user:
             form = UserUpdateFormRightInfo(instance=user)
+            form_professional_info = UserUpdateFormAboutProfessional(instance=user)
+            form_professional_history = UserUpdateFormAboutProfessionalHistory(instance=user)
+            form_advertisement = UserUpdateFormAboutAdvertisement(instance=user)
             return render(
                 request=request,
                 template_name='users/perfilprofissional.html',
-                context={'form': form}
-                )
+                context={
+                        'form': form,
+                        'form_professional_info': form_professional_info,
+                        'form_professional_history': form_professional_history,
+                        'form_advertisement': form_advertisement,
+                })
         return redirect('home')
     return redirect('home')

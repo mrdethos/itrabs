@@ -128,6 +128,7 @@
               <form method="POST" id="form">
                 {% csrf_token %}
                 {{ form.email }}
+                <br>
               <a href="#">{{ form.instance.phone_number }}</a>
                 {% csrf_token %}
                 {{ form.phone_number }}
@@ -154,7 +155,9 @@
             </div>
           </div>
         </div>
+
         {% else %}
+
         <div class="about-box box">
           <span>
             <div class="box-label">
